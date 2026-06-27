@@ -59,7 +59,6 @@ Full explanation and business rationale for each field is also in `outputs/busin
 
 ## 7. Key Business Insights
 
-Full detail with evidence is in `outputs/business_insights.md`. Headlines:
 - Sales grew 4.27% YoY but profit grew only 2.19% — margin is compressing.
 - Technology drives 84.2% of profit from 70.9% of sales at a 17.6% margin — the clear profit engine.
 - Furniture sits at a 5.8% margin (vs. 15.35% company average), driven by Bookcases and Tables, which also have the highest discounts and return rates.
@@ -69,7 +68,7 @@ Full detail with evidence is in `outputs/business_insights.md`. Headlines:
 
 ## 8. Dashboard Story Summary
 
-Full narrative is in `outputs/dashboard_story.md`. In short: the business is healthy and growing on the surface, but margin is being quietly compressed by uncontrolled discounting concentrated in Furniture (especially Bookcases and Tables), and a fulfillment gap in the East region is driving both slower delivery and more returns there. Technology is the clear opportunity to lean into further, given its consistent above-average margin across all sub-categories.
+ In short: the business is healthy and growing on the surface, but margin is being quietly compressed by uncontrolled discounting concentrated in Furniture (especially Bookcases and Tables), and a fulfillment gap in the East region is driving both slower delivery and more returns there. Technology is the clear opportunity to lean into further, given its consistent above-average margin across all sub-categories.
 
 ## 9. Assumptions and Limitations
 
@@ -89,13 +88,4 @@ Full narrative is in `outputs/dashboard_story.md`. In short: the business is hea
 | `screenshots/category_profitability_view.png` | Category/sub-category profitability bar chart |
 | `screenshots/filter_interaction_view.png` | Dashboard with a filter/action applied, showing the interaction in effect |
 
-## Repository Structure
 
-```
-part4_tableau_dashboard/
-├── data/dashboard_sales_data.xlsx
-├── tableau/executive_dashboard.twbx
-├── outputs/dashboard_story.md, business_insights.md, chart_selection_justification.md
-├── screenshots/ (5 PNGs)
-└── README.md
-```
