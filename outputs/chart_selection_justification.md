@@ -1,6 +1,5 @@
 # Chart Selection Justification
 
-For each major view in the executive dashboard, this document explains the business question it answers, why that chart type was chosen, how visual encoding (color/size/label/filter) was used, the design principle applied, and the mistake that was deliberately avoided.
 
 ---
 
@@ -12,11 +11,11 @@ For each major view in the executive dashboard, this document explains the busin
 - **Design principle applied:** Consistent color usage — Sales and Profit use the same two colors throughout the entire dashboard, so the eye doesn't have to re-learn the legend on every sheet.
 - **Mistake avoided:** Did not truncate the Y-axis at a non-zero baseline, which would visually exaggerate small month-to-month fluctuations and mislead leadership into thinking volatility is larger than it is.
 
-## 2. Regional Performance View — Filled Map + Bar Chart
+## 2. Regional Performance View — Filled Map 
 
 - **Question answered:** Which regions/states are driving sales and profit, and where is performance lagging?
-- **Why this chart type:** A filled map gives an intuitive geographic read for a geographic field (State), while a supporting bar chart ranks regions precisely — maps are good for "where," bars are better for precise ranking, so both are used together rather than relying on the map alone.
-- **Encoding:** Map: State (geographic role) for location, SUM(Profit) for color (diverging color scale, since profit can be relatively low or high but not negative at state level here); Bar chart: Region on rows, SUM(Sales) length, color = Region for consistency.
+- **Why this chart type:** A filled map gives an intuitive geographic read for a geographic field (State).
+- **Encoding:** Map: State (geographic role) for location, SUM(Profit) for color (diverging color scale, since profit can be relatively low or high but not negative at state level here).
 - **Design principle applied:** Useful filters — Region and State filters let leadership drill from a national view into a single region without rebuilding the chart.
 - **Mistake avoided:** Did not use map color to encode Sales and size to encode Profit simultaneously (a common "double-encoding" mistake) — only one measure is color-coded at a time, keeping the read unambiguous.
 
@@ -28,7 +27,7 @@ For each major view in the executive dashboard, this document explains the busin
 - **Design principle applied:** Appropriate sorting — bars are sorted descending by Profit, not alphabetically, so the worst performers are immediately visible at the bottom without the viewer having to scan the whole list.
 - **Mistake avoided:** Avoided a pie or donut chart for category share, since pie charts make it hard to compare more than 3–4 slices accurately — a bar chart with a clear length encoding was used instead.
 
-## 4. Customer Segment View — Highlight Table / Bar Chart
+## 4. Customer Segment View — Highlight Table 
 
 - **Question answered:** How do Consumer, Corporate, and Home Office segments compare on sales, margin, average order value, and return rate?
 - **Why this chart type:** A highlight table (color-coded grid) is well suited to comparing a small number of categories (3 segments) across several measures at once side-by-side, which a single bar chart cannot do without becoming cluttered.
@@ -36,13 +35,13 @@ For each major view in the executive dashboard, this document explains the busin
 - **Design principle applied:** Clear hierarchy and minimal clutter — only the four measures that matter for segment comparison are shown, not every field in the dataset.
 - **Mistake avoided:** Did not use a single combined "score" or index that blends sales, margin, and returns into one number — that would obscure the trade-off (e.g., Home Office is high-volume but high-return) that leadership specifically needs to see.
 
-## 5. Shipping Performance View — Bar Chart (Delivery Days) + Bar Chart (Return Rate by Ship Mode)
+## 5. Shipping Performance View — Bar Chart (Delivery Days) 
 
-- **Question answered:** Which shipping modes are slow, and does shipping speed relate to return rate or customer satisfaction?
+- **Question answered:** Which shipping modes are slow ?
 - **Why this chart type:** Bar charts are the right choice for comparing a small set of discrete categories (4 ship modes) on a single measure each — simpler and more precise than a combo chart for this specific comparison.
 - **Encoding:** Rows = Ship Mode; Length = AVG(Delivery Days) in one bar chart and Return Rate (calculated field) in a companion chart; Color = Ship Mode, kept consistent with other sheets.
 - **Design principle applied:** Readable titles and labels — each bar is directly labeled with its value (e.g., "4.71 days") so the viewer doesn't have to estimate from the axis.
-- **Mistake avoided:** Did not assume "faster shipping = fewer returns" and hide the First Class result (which has the highest return rate despite being faster than Standard) — the chart preserves the counter-intuitive data point rather than smoothing it away.
+- **Mistake avoided:** Did not assume "faster shipping = fewer returns" and hide the First Class result — the chart preserves the counter-intuitive data point rather than smoothing it away.
 
 ## 6. Discount vs. Profit View — Scatter Plot
 
